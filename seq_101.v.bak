@@ -1,0 +1,58 @@
+/*================================================
+							SEQUENCE 101
+==================================================
+Descripion:
+	This Moore FSM detects the non overlapping
+	sequence 101, assuming the input stream 
+	arrives LSB-first.
+	
+Design Engineer:
+	Edward Paul M. Aragon ☻ 
+	Cid Lawrenc C. Regalado ☻
+
+Date:
+	31 Mar 2026
+-------------------------------------------------*/
+module seq_101(out, in, clk, rst_n);
+ //ports
+ input in;
+ input clk;
+ input rst_n;
+ output reg out;
+ 
+ //state assignment
+ parameter [1:0] S0 = 2'b00;
+ parameter [1:0] S1 = 2'b01;
+ parameter [1:0] S2 = 2'b10;
+ parameter [1:0] S3 = 2'b11;
+ reg [1:0] nxt;
+ reg [1:0] pre;
+ 
+ // input block
+ always @ (in,pre) begin //check input and present state
+	case (pre) // if present state is:
+	S0: 		nxt =  in? S1:S0;
+	S1: 		nxt =  in? S1:S2;
+	S2: 		nxt =  in? S3:S0;
+	S3: 		nxt =  in? S1:S0;
+	default: nxt = S0;
+	
+	endcase
+ end
+ // sequential block
+ always @ (posedge clk, negedge rst_n) begin
+	if (!rst_n)	pre <= S0;
+	else 		 	pre <= nxt;
+ end
+ //output block
+ always @ (pre) begin
+	case (pre)
+	S0: 		out = 0;
+	S1: 		out = 0;
+	S2: 		out = 0;
+	S3:		out = 1;
+	default: out = 0;
+	
+	endcase
+end
+endmodule

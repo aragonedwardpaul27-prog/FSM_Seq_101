@@ -1,0 +1,41 @@
+# Compile of seq_101.v was successful.
+# Compile of testbench.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.testbench
+# vsim work.testbench 
+# Start time: 20:11:52 on Mar 30,2026
+# Loading work.testbench
+# Loading work.seq_101
+add wave sim:/testbench/*
+add wave -position end  sim:/testbench/dut/pre
+run
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+quit -sim
+# End time: 20:20:35 on Mar 30,2026, Elapsed time: 0:08:43
+# Errors: 0, Warnings: 1
+# Compile of seq_101.v was successful.
+vsim work.testbench
+# vsim work.testbench 
+# Start time: 20:27:16 on Mar 30,2026
+# Loading work.testbench
+# Loading work.seq_101
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut File: C:/Users/USER/Desktop/FSM_demo/FSM_Seq_101/testbench.v Line: 10
+# ** Warning: (vsim-3722) C:/Users/USER/Desktop/FSM_demo/FSM_Seq_101/testbench.v(10): [TFMPC] - Missing connection for port 'state'.
+quit -sim
+# End time: 20:27:33 on Mar 30,2026, Elapsed time: 0:00:17
+# Errors: 0, Warnings: 4
+# Compile of testbench.v was successful.
+vsim work.testbench
+# vsim work.testbench 
+# Start time: 20:29:10 on Mar 30,2026
+# Loading work.testbench
+# Loading work.seq_101
+add wave sim:/testbench/*
+add wave -position end  sim:/testbench/dut/pre
+add wave -position end  sim:/testbench/dut/pre
+run
+quit -sim
+# End time: 20:33:21 on Mar 30,2026, Elapsed time: 0:04:11
+# Errors: 0, Warnings: 2
