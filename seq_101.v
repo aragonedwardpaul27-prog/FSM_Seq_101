@@ -1,5 +1,5 @@
 /*================================================
-							SEQUENCE 101
+					SEQUENCE 101
 ==================================================
 Descripion:
 	This Moore FSM detects the non overlapping
@@ -16,10 +16,18 @@ Date:
 module seq_101(out, state, in, clk, rst_n);
  //ports
  input			in;
- input 			clk;
+ input 			clk_50; //50mhz clock
  input 			rst_n;
  output reg 		out;
  output reg 	[1:0] 	state;
+ ouput clk_led; //clock led
+
+ //1hz 3 sec clock
+ clk_div div(	
+ .clk_outr(clk),
+ .clk_in(clk_50),
+ .clk_led(clk_led)
+ );
  
  //state assignment
  parameter [1:0] S0 = 2'b00;
