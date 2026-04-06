@@ -13,16 +13,22 @@ Design Engineer:
 Date:
 	31 Mar 2026
 -------------------------------------------------*/
-module seq_101(out, state, in, clk, rst_n);
+module seq_101(out, state, clk_led, in, clk_50, rst_n);
  //ports
  input			in;
- input 			clk;
+ input 			clk_50;
  input 			rst_n;
  output reg 	out;
  output reg 	[1:0] 	state;
+ output clk_led;
  
  
  // Clock 3s period
+ clk_div div(	
+ .clk_out(clk),
+ .clk_in(clk_50),
+ .clk_led(clk_led)
+ );
  
  
  //state assignment
