@@ -24,7 +24,7 @@ module seq_101(out, state, in, clk, rst_n);
 
  //1hz 3 sec clock
  clk_div div(	
- .clk_outr(clk),
+ .clk_out(clk),
  .clk_in(clk_50),
  .clk_led(clk_led)
  );
