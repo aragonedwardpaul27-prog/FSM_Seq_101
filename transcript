@@ -3,39 +3,72 @@
 # 2 compiles, 0 failed with no errors.
 vsim work.testbench
 # vsim work.testbench 
-# Start time: 20:11:52 on Mar 30,2026
+# Start time: 18:29:37 on Apr 13,2026
 # Loading work.testbench
 # Loading work.seq_101
-add wave sim:/testbench/*
-add wave -position end  sim:/testbench/dut/pre
+add wave -position end  sim:/testbench/in
+add wave -position end  sim:/testbench/clk
+add wave -position end  sim:/testbench/rst_n
+add wave -position end  sim:/testbench/out
+add wave -position end  sim:/testbench/state
 run
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 quit -sim
-# End time: 20:20:35 on Mar 30,2026, Elapsed time: 0:08:43
-# Errors: 0, Warnings: 1
-# Compile of seq_101.v was successful.
-vsim work.testbench
-# vsim work.testbench 
-# Start time: 20:27:16 on Mar 30,2026
-# Loading work.testbench
-# Loading work.seq_101
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut File: C:/Users/USER/Desktop/FSM_demo/FSM_Seq_101/testbench.v Line: 10
-# ** Warning: (vsim-3722) C:/Users/USER/Desktop/FSM_demo/FSM_Seq_101/testbench.v(10): [TFMPC] - Missing connection for port 'state'.
-quit -sim
-# End time: 20:27:33 on Mar 30,2026, Elapsed time: 0:00:17
-# Errors: 0, Warnings: 4
+# End time: 18:32:04 on Apr 13,2026, Elapsed time: 0:02:27
+# Errors: 0, Warnings: 2
 # Compile of testbench.v was successful.
 vsim work.testbench
 # vsim work.testbench 
-# Start time: 20:29:10 on Mar 30,2026
+# Start time: 18:32:43 on Apr 13,2026
 # Loading work.testbench
 # Loading work.seq_101
-add wave sim:/testbench/*
-add wave -position end  sim:/testbench/dut/pre
-add wave -position end  sim:/testbench/dut/pre
+add wave -position end  sim:/testbench/in
+add wave -position end  sim:/testbench/clk
+add wave -position end  sim:/testbench/rst_n
+add wave -position end  sim:/testbench/out
+add wave -position end  sim:/testbench/state
 run
 quit -sim
-# End time: 20:33:21 on Mar 30,2026, Elapsed time: 0:04:11
+# End time: 18:34:49 on Apr 13,2026, Elapsed time: 0:02:06
+# Errors: 0, Warnings: 2
+vsim work.testbench
+# vsim work.testbench 
+# Start time: 18:36:17 on Apr 13,2026
+# Loading work.testbench
+# Loading work.seq_101
+quit -sim
+# End time: 18:38:31 on Apr 13,2026, Elapsed time: 0:02:14
+# Errors: 0, Warnings: 2
+# Compile of testbench.v was successful.
+vsim work.testbench
+# vsim work.testbench 
+# Start time: 18:38:52 on Apr 13,2026
+# Loading work.testbench
+# Loading work.seq_101
+add wave  \
+sim:/testbench/clk
+add wave -position end  sim:/testbench/in
+add wave -position end  sim:/testbench/clk
+add wave -position end  sim:/testbench/rst_n
+add wave -position end  sim:/testbench/out
+add wave -position end  sim:/testbench/state
+run
+quit -sim
+# End time: 18:40:10 on Apr 13,2026, Elapsed time: 0:01:18
+# Errors: 0, Warnings: 2
+# Compile of testbench.v was successful.
+vsim work.testbench
+# vsim work.testbench 
+# Start time: 18:41:58 on Apr 13,2026
+# Loading work.testbench
+# Loading work.seq_101
+add wave  \
+sim:/testbench/in \
+sim:/testbench/clk \
+sim:/testbench/rst_n \
+sim:/testbench/out \
+sim:/testbench/state
+run
+# WARNING: No extended dataflow license exists
+quit -sim
+# End time: 18:49:14 on Apr 13,2026, Elapsed time: 0:07:16
 # Errors: 0, Warnings: 2

@@ -8,6 +8,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "state[0]",
+					"strict" : false
+				},
+				{
+					"name" : "state[1]",
+					"strict" : false
+				},
+				{
 					"name" : "in",
 					"strict" : false
 				},
